@@ -7,7 +7,7 @@
 /bazel-out
 
 # Angular Environment
-/src/environments/*.ts
+# /src/environments/*.ts
 
 # Node
 /node_modules
