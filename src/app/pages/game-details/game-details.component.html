@@ -1,0 +1,220 @@
+<div class="container">
+  <mat-card class="game-card">
+    <mat-card-header class="game-card-header">
+      <mat-card-title-group class="mat-card-title-group">
+        <mat-grid-list cols="1" rowHeight="2:1">
+          <div class="overlayContainer">
+            <img
+              mat-card-xl-image
+              [src]="gameDetails.background_image"
+              alt="Game Image"
+              class="gameImage"
+            />
+            <div class="darkOverlay">
+              <div class="overlayTitle">
+                <span class="gameTitle">{{
+                  gameDetails.name | truncate : 4
+                }}</span>
+                <div
+                  *ngIf="
+                    gameDetails.developers && gameDetails.developers.length
+                  "
+                >
+                  &nbsp;
+                  <div
+                    class="developers-box"
+                    *ngFor="
+                      let developer of gameDetails.developers.slice(0, 1);
+                      let last = last
+                    "
+                  >
+                    <span class="developerName">{{ developer.name }}</span>
+                    <ng-container *ngIf="!last"
+                      ><h5>,</h5>
+                      &nbsp;</ng-container
+                    >
+                  </div>
+                  <div
+                    *ngIf="
+                      gameDetails.platforms && gameDetails.platforms.length
+                    "
+                    class="platforms-container"
+                  >
+                    <div class="horizontal-platforms">
+                      <span
+                        *ngFor="
+                          let platform of gameDetails.platforms.slice(0, 3)
+                        "
+                        class="platform-box"
+                      >
+                        {{ platform.platform.name }}
+                      </span>
+                    </div>
+                  </div>
+                  <div class="rating-box">
+                    <p class="gameRating">
+                      <span>{{
+                        gameDetails.rating * 20 | number : "1.0-0"
+                      }}</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-grid-list>
+      </mat-card-title-group>
+    </mat-card-header>
+  </mat-card>
+
+  <div class="trailer-container">
+    <iframe
+      *ngIf="GameTrailerId"
+      width="100%"
+      height="450"
+      [src]="getYouTubeEmbedUrl(GameTrailerId)"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    ></iframe>
+  </div>
+
+  <div class="stores-container">
+    <div class="stores-title">
+      <div>
+        <br /><br /><br /><br /><br />
+        <h1 id="hero">Available Stores</h1>
+        <hr />
+        <div fxLayout="row wrap" class="stores-array">
+          <div *ngIf="gameDetails.stores && gameDetails.stores.length">
+            <div class="horizontal-stores">
+              <div
+                *ngFor="let store of gameDetails.stores"
+                class="stores-box"
+                fxFlex="100%"
+                fxFlex.gt-md="calc(33% - 16px)"
+                fxFlex.gt-sm="calc(33% - 16px)"
+                fxFlex.gt-xs="calc(50% - 16px)"
+                fxFlex.gt-xxs="calc(50% - 16px)"
+              >
+                <mat-card
+                  class="store-card"
+                  (click)="redirectToStore(store.store.domain)"
+                >
+                  <div class="image-container">
+                    <img
+                      mat-card-image
+                      width="100%"
+                      height="150px"
+                      src="{{ store.store.image_background }}"
+                      alt="Game Image"
+                      class="cardimage"
+                    />
+                  </div>
+                  <mat-card-content>
+                    <p class="store-name">{{ store.store.name }}</p>
+                  </mat-card-content>
+                </mat-card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br /><br /><br /><br /><br />
+
+  <!-- started working on image gallery -->
+  
+
+  <!-- image gallery ends here -->
+
+  <h1 id="hero">Game Details</h1>
+  <hr />
+  <div class="details-container">
+    <div class="description">
+      <p class="game-description">Game Description</p>
+      {{ gameDetails.description_raw }}
+    </div>
+    <div class="additional-info">
+      <div
+        *ngIf="gameDetails.genres && gameDetails.genres.length"
+        class="genres-container"
+      >
+        <div class="horizontal-genres">
+          <div id="genres-title">Genre:</div>
+          <div *ngFor="let genre of gameDetails.genres" class="genre-box">
+            {{ genre.name }}
+          </div>
+        </div>
+      </div>
+      <div class="horizontal-Achievements">
+        <div id="Achievements-title">Achievements:</div>
+        <div class="Achievements-box">
+          {{ gameDetails.achievements_count }}
+        </div>
+      </div>
+      <div
+        *ngIf="gameDetails.publishers && gameDetails.publishers.length"
+        class="publishers-container"
+      >
+        <div class="horizontal-publishers">
+          <div id="publishers-title">Publishers:</div>
+          <div
+            *ngFor="let publisher of gameDetails.publishers"
+            class="publishers-box"
+          >
+            <p>{{ publisher.name }}</p>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="gameDetails.esrb_rating" class="esrb_rating-container">
+        <div class="horizontal-esrb_rating">
+          <div id="esrb_rating-title">ESRB:</div>
+          <div class="esrb_rating-box">
+            {{ gameDetails.esrb_rating.name }}
+          </div>
+        </div>
+      </div>
+      <div *ngIf="gameDetails.website" class="website-container">
+        <div class="horizontal-website">
+          <div id="website-title">Website:</div>
+          <div class="website-box">
+            <p>{{ gameDetails.website }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="release-date-container">
+        <div class="horizontal-release-date">
+          <div id="release-date-title">Release Date:</div>
+          <div class="release-box">
+            {{ gameDetails.released }}
+          </div>
+        </div>
+      </div>
+      <div
+        *ngIf="gameDetails.tags && gameDetails.tags.length"
+        class="tags-container"
+      >
+        <div class="horizontal-tags">
+          <div id="tags-title">Tags:</div>
+          <div *ngFor="let tag of gameDetails.tags" class="tag-box">
+            {{ tag.name }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br /><br /><br /><br /><br />
+
+  <!-- started working on chart -->
+  <div class="rating-container">
+    <h1 style="font-family: 'Bebas Neue', sans-serif">Game Rating</h1>
+    <hr />
+    <div class="chart-container">
+      <canvas id="chart">{{ chart }}</canvas>
+    </div>
+  </div>
+
+  <!-- chart ends here -->
+</div>

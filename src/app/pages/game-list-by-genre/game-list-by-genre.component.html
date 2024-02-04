@@ -1,0 +1,75 @@
+<div class="container">
+  
+    <div fxLayoutGap="16px grid" fxLayout="row wrap">
+      <div
+        *ngFor="let item of gamesData"
+        fxFlex="100%"
+        fxFlex.gt-md="calc(25% - 16px)"
+        fxFlex.gt-sm="calc(33% - 16px)"
+        fxFlex.gt-xs="calc(50% - 16px)"
+        fxFlex.gt-xxs="calc(50% - 16px)"
+      >
+        <mat-card
+          class="gameCard mat-elevation-z4"
+          (mouseover)="showEffect = true"
+          (mouseout)="showEffect = false"
+          (click)="navigateToGameDetails(item.id)"
+          
+        >
+        
+          <img
+            mat-card-image
+            width="100%"
+            height="150px"
+            src="{{ item.background_image }}"
+            alt="Game Image"
+            class="cardimage"
+          />
+          <mat-card-content>
+            <div class="gameContent">
+              <h3 class="gameTitle">{{ item.name | truncate : 4 }}</h3>
+              <div
+                *ngIf="item.genres && item.genres.length"
+                class="genres-container"
+              >
+                <div class="horizontal-genres">
+                  <div
+                    *ngFor="let genre of item.genres.slice(0, 2)"
+                    class="genre-box"
+                  >
+                    {{ genre.name }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </mat-card-content>
+          <mat-card-actions class="gameFooter">
+            <div
+              *ngIf="item.platforms && item.platforms.length"
+              class="platforms-container"
+            >
+              <div class="horizontal-platforms">
+                <div
+                  *ngFor="let platform of item.platforms.slice(0, 3)"
+                  class="platform-box"
+                >
+                  {{ platform.platform.name }}
+                </div>
+              </div>
+            </div>
+            <div class="rating-box">
+              <p class="gameRating">
+                <span>{{ item.rating * 20 | number : "1.0-0" }}</span>
+              </p>
+            </div>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+    <div class="load-more-container">
+      <button class="load-more" mat-button (click)="load20MoreGamesByGenre(genreId)">
+        Load More
+      </button>
+    </div>
+  </div>
+  

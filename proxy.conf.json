@@ -1,0 +1,8 @@
+{
+    "/api": {
+      "target": "https://www.freetogame.com",
+      "secure": false,
+      "changeOrigin": true
+    }
+  }
+  

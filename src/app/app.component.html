@@ -1,0 +1,63 @@
+<mat-toolbar class="header-container">
+  <div class="header-right-container">
+    <button
+      mat-icon-button
+      class="menu-button"
+      aria-label="Example icon-button with menu icon"
+      (click)="drawer.toggle()"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="example-spacer"></span>
+    <span id="logo">My Games App</span>
+  </div>
+  <div class="header-left-container">
+    <div class="search-form">
+      <input
+        [(ngModel)]="searchValue"
+        class="search"
+        placeholder="Search"
+        (input)="onSearchInput()"
+      />
+      <mat-icon (click)="searchGame()" class="search-icon">search</mat-icon>
+    </div>
+  </div>
+</mat-toolbar>
+
+<mat-drawer-container>
+  <mat-drawer #drawer mode="over" class="drawer">
+    <button class="drawer-button" mat-button (click)="navigateToHome()">
+      <mat-icon>home</mat-icon>Home
+    </button>
+
+    <button class="drawer-button" mat-button (click)="toggleGenres()">
+      <mat-icon>category</mat-icon>Genres
+    </button>
+
+    <div *ngIf="showGenres" class="genres-list" [@fadeInOut]>
+      <button
+        class="genre-button"
+        *ngFor="let genre of genres"
+        mat-button
+        (click)="navigateToGenre(genre.id)"
+      >
+        <img
+          class="genre-image"
+          [src]="genre.image_background"
+          alt="genre Image"
+        />
+        {{ genre.name }}
+      </button>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content class="main-container">
+    <app-autocomplete
+      [suggestions]="autocompleteSuggestions"
+    ></app-autocomplete>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+<footer>
+  <app-footer class="footer-container"></app-footer>
+</footer>

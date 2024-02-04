@@ -1,0 +1,107 @@
+.container {
+  padding: 26px;
+  background-color: #02001d;
+}
+.column-label {
+  margin-right: 8px;
+  font-size: 1rem;
+}
+.mat-elevation-z4 {
+  background-color: #04003a;
+  border-radius: 23px;
+  margin-bottom: 30px;
+}
+.gameCard {
+  border: 1px solid transparent;
+  height: 300px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+    border 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.011);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid black;
+    cursor: pointer;
+  }
+}
+.loadmore {
+  color: black;
+}
+.cardimage {
+  border-radius: 23px;
+  height: 190px;
+}
+.gameTitle {
+  color: white;
+}
+.gameFooter {
+  color: white;
+}
+.gameContent {
+  display: flex;
+  justify-content: space-between;
+}
+
+// .gameRating {
+// }
+
+.material-icons {
+  vertical-align: middle;
+}
+.genres-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.horizontal-genres {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5px;
+  font-size: smaller;
+  color: #ffffff;
+}
+.genre-box {
+  font-size: smaller;
+  color: #ffffff;
+  padding: 8px;
+  border-radius: 20px;
+  background-color: #252728;
+}
+.rating-box {
+  padding: 3px;
+  border-radius: 5px;
+  border: 1px solid green;
+  color: green;
+  height: 20px;
+  margin-bottom: 15px;
+  // display: flex;
+  // align-items: start;
+}
+.gameDevolper {
+  color: white;
+}
+.platforms-container {
+  margin-left: 6px;
+}
+.platform-box {
+  border: 1px solid white;
+  height: 20px;
+  border-radius: 5px;
+  color: white;
+  padding: 2px;
+  margin-bottom: 5px;
+}
+.horizontal-platforms {
+  display: flex;
+  flex-direction: row;
+  gap: 7px;
+  font-size: smaller;
+  color: #ffffff;
+  margin-bottom: 9px;
+}
+.gameFooter{
+  display: flex;
+  justify-content: space-between;
+}

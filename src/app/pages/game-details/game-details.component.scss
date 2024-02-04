@@ -1,0 +1,537 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cabin&display=swap");
+
+.container {
+  background-color: #02002b;
+  font-family: "Bebas Neue", sans-serif;
+}
+.game-card-header {
+  display: contents;
+}
+.overlayContainer {
+  position: relative;
+}
+.gameImage {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border: none;
+  display: block;
+  margin: 0 auto;
+  background-color: transparent;
+}
+
+.darkOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-85%, -20%);
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  border-radius: 2px;
+}
+.gameTitle {
+  color: white;
+  font-weight: lighter;
+  margin-top: 20px;
+}
+.developerName {
+  color: white;
+}
+.developers-box {
+  margin-right: 70px;
+  margin-bottom: 10px;
+}
+
+.horizontal-platforms {
+  display: flex;
+  flex-direction: row;
+  gap: 7px;
+  font-size: smaller;
+  color: #ffffff;
+  margin-bottom: 9px;
+}
+.platform-box {
+  border: 1px solid white;
+  height: 20px;
+  border-radius: 5px;
+  color: white;
+  padding: 2px;
+  margin-bottom: 5px;
+}
+.rating-box {
+  padding: 5px;
+  padding-top: 10px;
+  border-radius: 5px;
+  border: 1px solid green;
+  color: green;
+  height: 25px;
+  width: 40px;
+  margin-bottom: 15px;
+}
+.gameRating {
+  font-size: 2rem;
+}
+.stores-container {
+  height: auto;
+  background-color: #01001b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+#hero {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 3rem;
+}
+
+.horizontal-stores {
+  color: white;
+  flex-wrap: wrap;
+  padding: 100px;
+}
+
+.stores-array {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.store-card {
+  max-width: 300px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 16px;
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  transition: transform 0.3s ease-in-out;
+}
+.store-card:hover {
+  transform: scale(1.01);
+  cursor: pointer;
+}
+
+.cardimage {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.store-name {
+  font-size: 1rem;
+  margin: 0;
+  margin-top: 22px;
+}
+.details-container {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Kanit", sans-serif;
+  background-color: #02002b;
+}
+
+.description,
+.additional-info {
+  width: 49.5%;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 10px;
+  margin: 5px;
+  background-color: #03003d;
+  border: none !important;
+}
+.additional-info {
+  display: flex;
+  flex-direction: column;
+}
+.description {
+  font-size: 1rem;
+}
+
+.genres-container {
+  display: flex;
+  align-items: center;
+}
+
+.horizontal-genres,
+.horizontal-Achievements,
+.horizontal-publishers,
+.horizontal-esrb_rating,
+.horizontal-website,
+.horizontal-release-date,
+.horizontal-tags {
+  display: flex;
+  align-items: center;
+  font-family: "Cabin", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.genre-box {
+  margin-right: 10px;
+}
+
+#genres-title,
+#Achievements-title,
+#publishers-title,
+#esrb_rating-title,
+#website-title,
+#release-date-title,
+#tags-title,
+#ratings-title {
+  margin-right: 10px;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.3rem;
+}
+
+.publishers-container {
+  display: flex;
+  align-items: center;
+}
+.Achievements-box {
+  margin-right: 10px;
+}
+
+.publishers-box {
+  margin-right: 10px;
+}
+.esrb_rating-container {
+  display: flex;
+  align-items: center;
+}
+
+.esrb_rating-box {
+  margin-right: 10px;
+}
+.website-container {
+  display: flex;
+  align-items: center;
+}
+
+.website-box {
+  margin-right: 10px;
+}
+.release-date-container {
+  display: flex;
+  align-items: center;
+}
+
+.release-box {
+  margin-right: 10px;
+}
+.game-description {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: x-large;
+}
+.game-tags-container {
+  height: auto;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.horizontal-tags {
+  flex-wrap: wrap;
+}
+.tag-box {
+  font-size: smaller;
+  color: #ffffff;
+  padding: 8px;
+  border-radius: 20px;
+  background-color: #01001b;
+  margin: 1px;
+}
+#chart {
+  max-height: 300px;
+  margin-top: 20px;
+}
+
+.chart-container {
+  height: auto;
+  background-color: #01001b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.rating-container {
+  height: auto;
+  background-color: #01001b;
+  padding: 25px;
+}
+.rating-container > h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: xx-large;
+}
+
+// media queries
+@media screen and (max-width: 320px) {
+  .trailer-container {
+    margin-top: 100px;
+  }
+  .darkOverlay {
+    height: auto;
+  }
+  .gameTitle {
+    color: white;
+    font-weight: lighter;
+    font-size: 0.5rem;
+    margin-bottom: none;
+  }
+  .developerName {
+    color: white;
+    font-size: 0.95rem;
+  }
+  .store-card {
+    margin: auto;
+  }
+  .stores-box {
+    margin-bottom: 30px;
+  }
+  .publishers-box > p {
+    font-size: 0.68rem;
+    margin-top: 10px;
+  }
+  .horizontal-website {
+    flex-direction: column;
+  }
+  #website-title {
+    align-self: start;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .trailer-container {
+    margin-top: 300px;
+    height: 250px;
+    width: 100%;
+  }
+  .horizontal-stores {
+    padding: 35px;
+  }
+  .genre-box,
+  .Achievements-box,
+  .esrb_rating-box,
+  .release-box {
+    font-size: 1.7rem;
+  }
+  .publishers-box > p {
+    font-size: 0.68rem;
+    margin-top: 10px;
+  }
+  .website-box > p {
+    font-size: 0.68rem;
+    margin-top: 10px;
+  }
+}
+@media screen and (min-width: 425px) {
+  .trailer-container {
+    margin-top: 300px;
+    width: 100%;
+  }
+  #publishers-title {
+    margin-bottom: 12px;
+  }
+  #website-title {
+    margin-bottom: 12px;
+  }
+}
+@media screen and (max-width: 426px) {
+  .trailer-container {
+    margin-top: 300px;
+    height: 250px;
+    width: 100%;
+  }
+  .genre-box,
+  .Achievements-box,
+  .publishers-box,
+  .esrb_rating-box,
+  .website-box,
+  .release-box {
+    font-size: 0.8rem;
+  }
+  .horizontal-stores {
+    padding: 35px;
+  }
+  .darkOverlay {
+    transform: translate(-50%, 40%);
+    width: 90%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 0;
+  }
+
+  .overlayTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+  }
+
+  .gameTitle {
+    color: white;
+    font-weight: lighter;
+    font-size: large;
+  }
+  .developerName {
+    color: white;
+    font-size: 0.95rem;
+  }
+  .developers-box {
+    margin-right: 85px;
+    margin-bottom: 20px;
+  }
+  .stores-container {
+    margin-top: 200px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .details-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+  .description,
+  .additional-info {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .trailer-container {
+    height: 100%;
+  }
+  .horizontal-stores {
+    padding: 35px;
+  }
+  .gameTitle {
+    font-size: 2rem;
+    margin-top: 30px;
+  }
+  .developers-box {
+    margin-right: 85px;
+    margin-bottom: 10px;
+  }
+  .developerName {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .trailer-container {
+    height: 100%;
+  }
+  .gameTitle {
+    font-size: 2.7rem;
+    margin-top: 30px;
+    margin-bottom: 1rem;
+  }
+
+  .developerName {
+    font-size: 1.7rem;
+    margin-top: 40px;
+    margin-bottom: 2rem;
+    margin-right: 40px;
+  }
+  .platform-box {
+    font-size: 1.2rem;
+    padding: 4px;
+    margin-top: 17px;
+    margin-bottom: 17px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .trailer-container {
+    height: 100%;
+  }
+  .gameTitle {
+    font-size: 2.7rem;
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+  .developerName {
+    font-size: 2.2rem;
+    margin-right: 140px;
+  }
+  .platform-box {
+    font-size: 1.5rem;
+    padding: 6px;
+    margin-top: 27px;
+    margin-bottom: 27px;
+  }
+  .rating-box {
+    padding: 5px;
+    padding-top: 30px;
+    border-radius: 5px;
+    border: 1px solid green;
+    color: green;
+    height: 50px;
+    width: 70px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+  .gameRating {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .trailer-container {
+    height: 100%;
+  }
+  .overlayTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .trailer-container {
+    height: 100%;
+  }
+  .overlayTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  .gameTitle {
+    font-size: 5.5rem;
+    margin-top: 30px;
+    margin-bottom: 100px;
+  }
+  .developerName {
+    font-size: 2.8rem;
+    margin-right: 200px;
+  }
+  .developers-box {
+    margin-right: 200px;
+    margin-bottom: 40px;
+  }
+  .platform-box {
+    padding: 28px;
+    font-size: 3rem;
+  }
+  .rating-box {
+    padding: 50px;
+    padding-top: 60px;
+    border-radius: 5px;
+    border: 2px solid green;
+    color: green;
+    height: 40px;
+    width: 50px;
+    margin-bottom: 25px;
+    margin-top: 55px;
+    padding-right: 105px;
+  }
+  .gameRating {
+    font-size: 6rem;
+  }
+}
